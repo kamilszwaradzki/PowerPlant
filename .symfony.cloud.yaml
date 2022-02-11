@@ -1,0 +1,14 @@
+relationships:
+    mongodb: "mydatabase:mongodb"
+
+runtime:
+    extensions:
+        - mongodb
+
+timezone: Europe/Warsaw
+
+crons:
+    generate_report:
+        # every day at 0h15 AM
+        spec: 15 0 * * *
+        cmd: croncape bin/console app:generate-report

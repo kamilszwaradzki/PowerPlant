@@ -1,0 +1,38 @@
+<style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+
+    tr:nth-child(even) {
+    background-color: #dddddd;
+    }
+</style>
+<h1>Report from {{ date }}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Generator id</th>
+            <th>Hour</th>
+            <th>Average Power(MW)</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for generator_id, hours in report %}
+        {% for hour, avg_power in hours %}
+        <tr>
+            <td>{{ generator_id }}</td>
+            <td>{{ hour }}</td>
+            <td>{{ avg_power }}</td>
+        </tr>
+        {% endfor %}
+    {% endfor %}
+    </tbody>
+</table>

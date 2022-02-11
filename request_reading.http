@@ -1,0 +1,21 @@
+###
+http://127.0.0.1:8000/reading/show/61ef49d0b6c1d5105269e112
+
+###
+http://127.0.0.1:8000/reading/generate_for_day/
+
+###
+http://127.0.0.1:8000/reading/generate_test_report/
+
+###
+http://127.0.0.1:8000/email/
+
+###
+http://127.0.0.1:8000/reading/61f948572801df28e24fce12
+
+###
+POST http://127.0.0.1:8000/reading/add HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 27
+
+date=2021-01-20&generator_id=2&time=1.001&power=10.001

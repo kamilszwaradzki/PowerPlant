@@ -1,0 +1,39 @@
+<style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+
+    tr:nth-child(even) {
+    background-color: #dddddd;
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Lp.</th>
+            <th>Generator id</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Power(KW)</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for column in readings %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ column.generator_id }}</td>
+            <td>{{ column.time }}</td>
+            <td>{{ column.date.toDateTime|date('d/m/Y', 'Europe/Warsaw') }}</td>
+            <td>{{ column.power }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
